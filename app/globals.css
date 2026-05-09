@@ -1,5 +1,12 @@
+:root {
+  --color-primary-bg: #FFF9E8;
+  --color-primary: #8BDFDD;
+  --color-accent: #F48F68;
+  --color-highlight: #FFE394;
+}
+
 body {
-  background-color: #fff9e8;
+  background-color: var(--color-primary-bg);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: #333;
