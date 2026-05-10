@@ -1,4 +1,5 @@
 import LineWaves from '../components/LineWaves';
+import PitchDeckButton from '../components/PitchDeckButton';
 import ScrollFade from '../components/ScrollFade';
 
 export default function Home() {
@@ -35,9 +36,7 @@ export default function Home() {
               
             </div>
             
-            <a className="nav-cta" href="/SPARS.pdf">
-              Pitch Deck
-            </a>
+            <PitchDeckButton />
           </div>
         </header>
 
@@ -73,20 +72,6 @@ export default function Home() {
               Start a project <span>→</span>
             </button>
           </div>
-          <div className="hero-right">
-            <div className="hero-image">
-              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80" alt="Industrial studio" />
-              <div className="hero-card">
-                <div className="label">System Status</div>
-                <div className="bar"><span style={{ width: '82%' }} /></div>
-                <div className="bar"><span style={{ width: '64%' }} /></div>
-                <div className="bar"><span style={{ width: '91%' }} /></div>
-                <div className="label" style={{ marginTop: '1rem' }}>
-                  ID: XR-4421
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
 
         <section className="marquee scroll-fade fullscreen-section" data-scroll-fade aria-hidden="true">
@@ -116,11 +101,15 @@ export default function Home() {
         </section>
 
         <section className="section projects scroll-fade fullscreen-section" data-scroll-fade id="work">
-          {['Foundry Platform', 'Process Atlas', 'Signal Architecture'].map(name => (
-            <div className="project-row" key={name}>
-              <h3>{name}</h3>
-              <div className="project-image">
-                <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80" alt="Project preview" />
+          {[
+            { name: 'Old Age Homes', image: '/1.png', alt: 'Old age homes', showImage: true },
+            { name: 'Healthcare / Medtech', image: '/2.jpg', alt: 'Healthcare and medtech' },
+            { name: 'Home Security', image: '/3.png', alt: 'Home security' },
+          ].map(item => (
+            <div className="project-row" key={item.name}>
+              <h3>{item.name}</h3>
+              <div className={`project-image${item.showImage ? ' is-visible' : ''}`}>
+                <img src={item.image} alt={item.alt} />
               </div>
               <div className="view-pill">View</div>
             </div>

@@ -151,6 +151,7 @@ img {
   border: 1px solid var(--fg);
   border-radius: 999px;
   background: transparent;
+  cursor: pointer;
   font-weight: 700;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -191,7 +192,8 @@ img {
 }
 
 .about h2 {
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-playfair), serif;
+  font-style: italic;
   font-size: clamp(56px, 8vw, 140px);
   letter-spacing: -0.04em;
   text-transform: uppercase;
@@ -422,6 +424,10 @@ img {
   position: relative;
   clip-path: inset(0 0 0 100%);
   transition: clip-path 0.6s var(--ease-smooth);
+}
+
+.project-image.is-visible {
+  clip-path: inset(0 0 0 0);
 }
 
 .project-row:hover .project-image {
