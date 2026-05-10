@@ -35,9 +35,9 @@ export default function Home() {
               
             </div>
             
-            <button className="nav-cta" type="button">
-             Mail Us
-            </button>
+            <a className="nav-cta" href="/SPARS.pdf">
+              Pitch Deck
+            </a>
           </div>
         </header>
 
@@ -127,18 +127,6 @@ export default function Home() {
           ))}
         </section>
 
-        <footer className="footer scroll-fade fullscreen-section" data-scroll-fade id="contact">
-          <div className="footer-marquee">SPARS SYSTEMS</div>
-          <div className="footer-inner">
-            <a href="mailto:studio@spars.com">studio@spars.com</a>
-            <div className="footer-bottom">
-              <div className="footer-status">
-                <span /> System Operational
-              </div>
-              <div>© 2026 SPARS</div>
-            </div>
-          </div>
-        </footer>
       </main>
     </ScrollFade>
   );
