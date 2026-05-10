@@ -75,7 +75,7 @@ export default function Home() {
             <nav className="nav-left label">
               <a href="#about">About</a>
               <a href="#work">Work</a>
-              <a href="#contact">Contact</a>
+              <a href="#contact" onClick={(e) => { e.preventDefault(); setIsFormOpen(true); }}>Contact</a>
             </nav>
             <div className="nav-logo">
               <span className="serif">SPARS</span>
@@ -120,8 +120,20 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="marquee scroll-fade fullscreen-section" data-scroll-fade aria-hidden="true">
+        <section className="marquee scroll-fade" data-scroll-fade aria-hidden="true">
           <div className="marquee-track">
+            <span>
+              <span className="stroke-text">Presence</span>
+              <span className="star">★</span>
+              <span className="serif">Heart-Beat</span>
+              <span className="star">★</span>
+            </span>
+            <span>
+              <span className="stroke-text">Breath-Rate</span>
+              <span className="star">★</span>
+              <span className="serif">Presence</span>
+              <span className="star">★</span>
+            </span>
             <span>
               <span className="stroke-text">Presence</span>
               <span className="star">★</span>
@@ -151,7 +163,7 @@ export default function Home() {
             { name: 'Old Age Homes', image: '/1.png', alt: 'Old age homes' },
             { name: 'Healthcare / Medtech', image: '/2.jpg', alt: 'Healthcare and medtech' },
             { name: 'Home Security', image: '/3.png', alt: 'Home security' },
-          ].map(item => (
+          ].map((item: { name: string; image: string; alt: string; showImage?: boolean }) => (
             <div className="project-row" key={item.name}>
               <h3>{item.name}</h3>
               <div className={`project-image${item.showImage ? ' is-visible' : ''}`}>

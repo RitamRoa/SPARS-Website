@@ -648,6 +648,7 @@ img {
 @media (max-width: 980px) {
   .hero {
     grid-template-columns: 1fr;
+    padding: 6rem 0 4rem;
   }
 
   .hero-left,
@@ -661,25 +662,56 @@ img {
   }
 
   .hero-title {
-    font-size: clamp(72px, 16vw, 120px);
+    font-size: clamp(64px, 14vw, 100px);
+  }
+
+  .hero-image {
+    min-height: 360px;
+  }
+
+  .hero-card {
+    bottom: 20px;
+    right: 20px;
+    padding: 1.2rem;
+    width: 200px;
+  }
+
+  .fullscreen-section {
+    min-height: auto;
+    padding: 4rem 0;
   }
 
   .project-row {
     grid-template-columns: 1fr;
     gap: 1rem;
-    padding: 2rem 0;
+    padding: 2.5rem 0;
     height: auto;
   }
 
-  .project-row h3,
+  .project-row h3 {
+    grid-column: 1 / -1;
+    width: 100%;
+    font-size: 32px;
+  }
+
   .project-image {
     grid-column: 1 / -1;
     width: 100%;
+    height: 200px;
+    clip-path: inset(0 0 0 0) !important; /* Make project images visible on mobile by default since hover is not available on touch screens */
+    margin-top: 0.5rem;
   }
 
   .view-pill {
-    position: static;
-    margin-top: 1rem;
+    position: relative;
+    right: auto;
+    width: fit-content;
+    height: auto;
+    padding: 0.5rem 1.5rem;
+    border-radius: 999px;
+    margin-top: 0.5rem;
+    font-size: 10px;
+    letter-spacing: 0.15em;
   }
 
   .journal {
@@ -689,6 +721,45 @@ img {
   .journal h2,
   .journal-list {
     grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-left {
+    display: none; /* Hide desktop nav links on smaller screens to prevent crowding */
+  }
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  .nav-logo {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .nav-cta {
+    padding: 0.5rem 1rem;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+  }
+
+  .modal-card {
+    padding: 1.5rem;
+    margin: 1rem;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-form {
+    gap: 1.5rem;
+  }
+
+  .form-section {
+    padding-top: 1rem;
   }
 }
 
