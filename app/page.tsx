@@ -4,9 +4,11 @@ import { useState } from 'react';
 import LineWaves from '../components/LineWaves';
 import PitchDeckButton from '../components/PitchDeckButton';
 import ScrollFade from '../components/ScrollFade';
+import LoginModal from '../components/LoginModal';
 
 export default function Home() {
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -82,7 +84,24 @@ export default function Home() {
               
             </div>
             
-            <PitchDeckButton />
+            <div 
+              style={{ 
+                gridColumn: '10 / span 3', 
+                justifySelf: 'end', 
+                display: 'flex', 
+                gap: '0.8rem', 
+                alignItems: 'center' 
+              }}
+            >
+              <button 
+                className="nav-cta" 
+                type="button" 
+                onClick={() => setIsLoginOpen(true)}
+              >
+                For Users
+              </button>
+              <PitchDeckButton />
+            </div>
           </div>
         </header>
 
@@ -267,6 +286,9 @@ export default function Home() {
             </div>
           </div>
         )}
+
+        {isLoginOpen && <LoginModal onClose={() => setIsLoginOpen(false)} />}
+
 
       </main>
     </ScrollFade>
