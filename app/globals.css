@@ -156,6 +156,13 @@ img {
   letter-spacing: 0.25em;
   text-transform: uppercase;
   font-size: 10px;
+  transition: all 0.25s var(--ease-smooth);
+}
+
+.nav-cta:hover {
+  background: var(--fg);
+  color: var(--bg);
+  transform: translateY(-1px);
 }
 
 .section {

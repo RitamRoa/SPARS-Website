@@ -105,6 +105,31 @@ export default function Home() {
           </div>
         </header>
 
+        {/* Floating background button right under header buttons */}
+        <div 
+          style={{ 
+            position: 'absolute', 
+            top: '96px', 
+            right: 'calc((100vw - min(1600px, 92vw)) / 2)',
+            zIndex: 5,
+            pointerEvents: 'auto'
+          }}
+        >
+          <a 
+            href="/vision.html"
+            className="nav-cta"
+            style={{
+              textDecoration: 'none',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            What we are currently building
+          </a>
+        </div>
+
         <section className="section hero scroll-fade" data-scroll-fade id="hero">
           <div className="hero-left">
             
