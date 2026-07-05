@@ -12,11 +12,11 @@
 
   <style>
     :root {
-      --accent: #2d2a24;
-      --accent-alpha: rgba(45, 42, 36, 0.1);
-      --bg: #f5f3ec;
-      --card-bg: rgba(255, 255, 255, 0.94);
-      --border-alpha: rgba(17, 17, 17, 0.15);
+      --accent: #2e2d29;
+      --accent-alpha: rgba(46, 45, 41, 0.08);
+      --bg: #f5f4f0;
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --border-alpha: rgba(46, 45, 41, 0.12);
       --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
       --font-mono: 'Courier New', monospace;
     }
@@ -34,17 +34,7 @@
       overflow: hidden;
       background-color: var(--bg);
       font-family: var(--font-family);
-      color: #111111;
-    }
-
-    /* Vitals Status Badge Pill */
-    #status-box {
-      padding: 3px 8px;
-      border-radius: 4px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      transition: all 0.2s ease;
+      color: var(--accent);
     }
 
     /* Error Message Overlay */
@@ -52,7 +42,7 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: #fdfcf7;
+      background: #f5f4f0;
       z-index: 9999;
       color: #c8503a;
       padding: 3rem;
@@ -80,7 +70,7 @@
       height: 48px;
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border-alpha);
+      border-bottom: 1px solid rgba(46, 45, 41, 0.08);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -103,14 +93,14 @@
     .h-symbol {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
       font-size: 14px;
-      color: #111111;
+      color: var(--accent);
     }
 
     .header-logo {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
       font-weight: 700;
       font-size: 16px;
-      color: #111111;
+      color: var(--accent);
       letter-spacing: 0.1em;
       line-height: 1.1;
     }
@@ -119,7 +109,7 @@
       font-family: system-ui, -apple-system, sans-serif;
       font-size: 9px;
       letter-spacing: 0.2em;
-      color: rgba(17, 17, 17, 0.6);
+      color: rgba(46, 45, 41, 0.5);
       text-transform: uppercase;
       font-weight: 300;
       border-left: none;
@@ -137,7 +127,7 @@
       font-family: system-ui, -apple-system, sans-serif;
       font-size: 11px;
       letter-spacing: 0.15em;
-      color: var(--accent);
+      color: rgba(46, 45, 41, 0.4);
       font-weight: 600;
       text-transform: uppercase;
       font-style: italic;
@@ -148,17 +138,17 @@
       font-size: 9px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(17, 17, 17, 0.7);
+      color: rgba(46, 45, 41, 0.6);
       background: transparent;
       padding: 2px 8px;
-      border: 1px solid rgba(17, 17, 17, 0.3);
+      border: 1px solid rgba(46, 45, 41, 0.2);
       border-radius: 999px;
     }
 
     /* Styled Dropdown */
     .scenario-select {
       background: transparent;
-      border: 1px solid rgba(45, 42, 36, 0.3);
+      border: 1px solid rgba(46, 45, 41, 0.25);
       color: var(--accent);
       padding: 8px 20px;
       font-size: 13px;
@@ -173,7 +163,7 @@
     }
     .scenario-select:hover {
       box-shadow: none;
-      border-color: rgba(45, 42, 36, 0.6);
+      border-color: rgba(46, 45, 41, 0.5);
     }
     .scenario-select option {
       background: #ffffff;
@@ -196,7 +186,7 @@
       position: absolute;
       background: var(--card-bg);
       border: 1px solid var(--border-alpha);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      box-shadow: none;
       pointer-events: auto;
       z-index: 5;
       padding: 24px;
@@ -204,7 +194,7 @@
       display: flex;
       flex-direction: column;
       gap: 1.2rem;
-      border-radius: 4px;
+      border-radius: 0;
     }
 
     .hud-left {
@@ -222,12 +212,12 @@
     .hud-card h3 {
       margin: 0;
       font-family: system-ui, -apple-system, sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: var(--accent);
-      border-bottom: 1px solid var(--border-alpha);
+      color: rgba(46, 45, 41, 0.6);
+      border-bottom: 1px solid rgba(46, 45, 41, 0.08);
       padding-bottom: 0.6rem;
     }
 
@@ -241,7 +231,7 @@
     .metric-item {
       display: flex;
       flex-direction: column;
-      border-bottom: 1px solid rgba(45, 42, 36, 0.05);
+      border-bottom: 1px solid rgba(46, 45, 41, 0.04);
       padding-bottom: 0.4rem;
     }
 
@@ -255,17 +245,17 @@
     .metric-label {
       font-family: system-ui, -apple-system, sans-serif;
       font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
+      font-weight: 300;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: rgba(17, 17, 17, 0.6);
+      color: rgba(46, 45, 41, 0.5);
     }
 
     .metric-value {
       font-family: system-ui, -apple-system, sans-serif;
       font-size: 14px;
-      color: #111111;
-      font-weight: 700;
+      color: var(--accent);
+      font-weight: 600;
     }
 
     .num {
@@ -275,7 +265,7 @@
 
     .vsep-line {
       height: 1px;
-      background: rgba(45, 42, 36, 0.1);
+      background: rgba(46, 45, 41, 0.08);
       margin: 2px 0;
     }
 
@@ -286,12 +276,10 @@
     /* Range Indicators */
     .range-bar {
       width: 100%;
-      height: 5px;
-      background: rgba(17, 17, 17, 0.08);
+      height: 4px;
+      background: rgba(46, 45, 41, 0.08);
       margin-top: 0.3rem;
       position: relative;
-      border-radius: 2px;
-      overflow: hidden;
     }
 
     .range-fill {
@@ -299,7 +287,7 @@
       left: 0;
       top: 0;
       height: 100%;
-      background: var(--accent);
+      background: rgba(46, 45, 41, 0.25);
       width: 70%;
     }
 
@@ -312,22 +300,22 @@
 
     .simulate-btn {
       background: transparent;
-      border: 1px solid var(--accent);
+      border: 1px solid rgba(46, 45, 41, 0.3);
       color: var(--accent);
       font-family: system-ui, -apple-system, sans-serif;
       padding: 8px 12px;
       font-size: 12px;
       cursor: pointer;
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: 0.1em;
       transition: all 0.3s ease;
       text-transform: uppercase;
       text-align: center;
-      border-radius: 4px;
+      border-radius: 0;
     }
 
     .simulate-btn:hover {
-      background: var(--accent-alpha);
+      background: rgba(46, 45, 41, 0.05);
       box-shadow: none;
     }
 
@@ -335,19 +323,19 @@
     .log-container {
       font-family: var(--font-mono);
       font-size: 11px;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.5);
       padding: 0.8rem;
-      border: 1px solid var(--border-alpha);
+      border: 1px solid rgba(46, 45, 41, 0.05);
       height: 120px;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
-      border-radius: 4px;
+      border-radius: 0;
     }
 
     .log-entry {
-      color: rgba(17, 17, 17, 0.7);
+      color: rgba(46, 45, 41, 0.6);
       display: flex;
       gap: 0.5rem;
     }
@@ -362,16 +350,16 @@
       bottom: 60px;
       max-width: 420px;
       background: var(--card-bg);
-      border-left: 3px solid var(--accent);
+      border-left: 2px solid var(--accent);
       padding: 1rem 1.2rem;
       pointer-events: auto;
       z-index: 5;
       font-family: system-ui, -apple-system, sans-serif;
       font-size: 11px;
       line-height: 1.6;
-      color: rgba(17, 17, 17, 0.75);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-      border-radius: 4px;
+      color: rgba(46, 45, 41, 0.65);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border-radius: 0;
     }
 
     /* Alert Banner (Bottom Center) */
@@ -395,15 +383,14 @@
     }
 
     .alert-banner.normal {
-      background: rgba(255, 255, 255, 0.94);
-      border: 1px solid rgba(17, 17, 17, 0.15);
-      color: #111111;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(46, 45, 41, 0.15);
+      color: var(--accent);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     }
 
     .alert-banner.alert {
-      background: rgba(200, 80, 58, 0.15);
+      background: rgba(200, 80, 58, 0.08);
       border: 1px solid #c8503a;
       color: #c8503a;
       box-shadow: none;
@@ -422,8 +409,8 @@
       left: 0;
       width: 100%;
       height: 36px;
-      background: rgba(255, 255, 255, 0.96);
-      border-top: 1px solid rgba(17, 17, 17, 0.12);
+      background: rgba(255, 255, 255, 0.95);
+      border-top: 1px solid rgba(46, 45, 41, 0.08);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -431,7 +418,7 @@
       z-index: 10;
       font-size: 10px;
       letter-spacing: 0.15em;
-      color: rgba(17, 17, 17, 0.7);
+      color: rgba(46, 45, 41, 0.4);
     }
 
     .footer-left {
@@ -488,12 +475,12 @@
       top: 0;
       font-family: system-ui, -apple-system, sans-serif;
       font-size: 10px;
-      color: rgba(17, 17, 17, 0.85);
+      color: rgba(46, 45, 41, 0.6);
       padding: 0;
       white-space: nowrap;
       pointer-events: none;
       transform: translate(-50%, -100%);
-      font-weight: 700;
+      font-weight: 300;
       letter-spacing: 0.05em;
     }
   </style>
@@ -603,25 +590,19 @@
     // Preset theme configurations
     const themes = {
       care: {
-        accent: '#c28e2b',
-        accentAlpha: 'rgba(194, 142, 43, 0.1)',
-        borderAlpha: 'rgba(17, 17, 17, 0.15)',
-        text: '#1b1812',
-        signal: 0xc28e2b
+        accent: '#2e2d29',
+        accentAlpha: 'rgba(46, 45, 41, 0.08)',
+        borderAlpha: 'rgba(46, 45, 41, 0.12)'
       },
       security: {
-        accent: '#2563eb',
-        accentAlpha: 'rgba(37, 99, 235, 0.1)',
-        borderAlpha: 'rgba(17, 17, 17, 0.15)',
-        text: '#10141f',
-        signal: 0x2563eb
+        accent: '#2e2d29',
+        accentAlpha: 'rgba(46, 45, 41, 0.08)',
+        borderAlpha: 'rgba(46, 45, 41, 0.12)'
       },
       clinical: {
-        accent: '#0d9488',
-        accentAlpha: 'rgba(13, 148, 136, 0.1)',
-        borderAlpha: 'rgba(17, 17, 17, 0.15)',
-        text: '#0e1817',
-        signal: 0x0d9488
+        accent: '#2e2d29',
+        accentAlpha: 'rgba(46, 45, 41, 0.08)',
+        borderAlpha: 'rgba(46, 45, 41, 0.12)'
       }
     };
 
@@ -651,7 +632,7 @@
     // ─── THREE.JS SCENE SETUP ─────────────────────────────────────────
     const container = document.getElementById('canvas-container');
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xf5f3ec);
+    scene.background = new THREE.Color(0xf5f4f0);
 
     const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 100);
     const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -710,10 +691,10 @@
     });
 
     // Lights
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+    const ambientLight = new THREE.AmbientLight(0x888888);
     scene.add(ambientLight);
 
-    const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    const dirLight = new THREE.DirectionalLight(0xffffff, 0.7);
     dirLight.position.set(5, 10, 5);
     scene.add(dirLight);
 
@@ -721,19 +702,19 @@
     // Floor
     const floorGeo = new THREE.PlaneGeometry(10, 10);
     const floorMat = new THREE.MeshStandardMaterial({
-      color: 0xf5f3ea,
-      roughness: 0.4,
-      metalness: 0.1
+      color: 0xffffff,
+      roughness: 0.5,
+      metalness: 0.05
     });
     const floor = new THREE.Mesh(floorGeo, floorMat);
     floor.rotation.x = -Math.PI / 2;
     scene.add(floor);
 
     // Grid
-    const gridColor = new THREE.Color(0xd2cebe);
+    const gridColor = new THREE.Color(0x2e2d29);
     const grid = new THREE.GridHelper(10, 20, gridColor, gridColor);
     grid.position.y = 0.01;
-    grid.material.opacity = 0.35;
+    grid.material.opacity = 0.06;
     grid.material.transparent = true;
     scene.add(grid);
 
@@ -756,22 +737,22 @@
       // Base enclosure
       const boxGeo = new THREE.BoxGeometry(0.2, 0.15, 0.05);
       const boxMat = new THREE.MeshStandardMaterial({
-        color: 0x111111,
-        emissive: 0x111111,
-        emissiveIntensity: 0.05
+        color: 0x2e2d29,
+        emissive: 0x2e2d29,
+        emissiveIntensity: 0.1
       });
       const box = new THREE.Mesh(boxGeo, boxMat);
       node.add(box);
 
       // Antenna
       const antGeo = new THREE.CylinderGeometry(0.008, 0.008, 0.3);
-      const antMat = new THREE.MeshBasicMaterial({ color: 0x111111 });
+      const antMat = new THREE.MeshBasicMaterial({ color: 0x2e2d29 });
       const ant = new THREE.Mesh(antGeo, antMat);
       ant.position.set(0, 0.15 + 0.075, 0);
       node.add(ant);
 
-      // Point Light (initially care gold)
-      const pLight = new THREE.PointLight(0xc28e2b, 0.3, 3);
+      // Point Light
+      const pLight = new THREE.PointLight(0xffffff, 0.3, 3);
       pLight.position.set(0, 0.1, 0);
       node.add(pLight);
       pointLights.push(pLight);
@@ -779,9 +760,9 @@
       // Pulsing torus ring
       const ringGeo = new THREE.TorusGeometry(1, 0.01, 8, 32);
       const ringMat = new THREE.MeshBasicMaterial({
-        color: 0xc28e2b,
+        color: 0x2e2d29,
         transparent: true,
-        opacity: 0.25
+        opacity: 0.2
       });
       const ring = new THREE.Mesh(ringGeo, ringMat);
       ring.rotation.x = -Math.PI / 2;
@@ -809,9 +790,9 @@
       const points = [posA, posB];
       const lineGeo = new THREE.BufferGeometry().setFromPoints(points);
       const lineMat = new THREE.LineBasicMaterial({
-        color: 0xc28e2b,
+        color: 0x2e2d29,
         transparent: true,
-        opacity: 0.12
+        opacity: 0.05
       });
       const line = new THREE.Line(lineGeo, lineMat);
       meshLinesGroup.add(line);
@@ -832,7 +813,7 @@
       
       // Bed
       const bedFrameGeo = new THREE.BoxGeometry(1.5, 0.4, 0.8);
-      const bedMat = new THREE.MeshStandardMaterial({ color: 0xeae6dc });
+      const bedMat = new THREE.MeshStandardMaterial({ color: 0xcccccc });
       bedMesh = new THREE.Mesh(bedFrameGeo, bedMat);
       bedMesh.position.set(0, 0.2, 0);
       scenarioGroup.add(bedMesh);
@@ -850,7 +831,7 @@
       // Body (capsule/cylinder)
       const bodyGeo = new THREE.CylinderGeometry(0.15, 0.15, 0.9, 16);
       bodyGeo.rotateZ(Math.PI / 2);
-      const bodyMat = new THREE.MeshStandardMaterial({ color: 0x4a463e });
+      const bodyMat = new THREE.MeshStandardMaterial({ color: 0x888888 });
       const body = new THREE.Mesh(bodyGeo, bodyMat);
       body.name = "body";
       personGroup.add(body);
@@ -890,16 +871,16 @@
         const points = curve.getPoints(30);
         const arcGeo = new THREE.BufferGeometry().setFromPoints(points);
         const arcMat = new THREE.LineBasicMaterial({
-          color: 0xc28e2b,
+          color: 0x2e2d29,
           transparent: true,
-          opacity: 0.15
+          opacity: 0.05
         });
         const arc = new THREE.Line(arcGeo, arcMat);
         scenarioGroup.add(arc);
 
         // Particle floating along arc
         const pGeo = new THREE.SphereGeometry(0.04, 8, 8);
-        const pMat = new THREE.MeshBasicMaterial({ color: 0xc28e2b });
+        const pMat = new THREE.MeshBasicMaterial({ color: 0x2e2d29 });
         const p = new THREE.Mesh(pGeo, pMat);
         
         particlesGroup.add(p);
@@ -927,7 +908,7 @@
 
       deskPositions.forEach((pos) => {
         const deskGeo = new THREE.BoxGeometry(1.0, 0.6, 0.6);
-        const deskMat = new THREE.MeshStandardMaterial({ color: 0xe5e1d5 });
+        const deskMat = new THREE.MeshStandardMaterial({ color: 0xcccccc });
         const desk = new THREE.Mesh(deskGeo, deskMat);
         desk.position.copy(pos);
         scenarioGroup.add(desk);
@@ -935,7 +916,7 @@
 
       // Entry point
       const doorGeo = new THREE.BoxGeometry(0.1, 1.2, 0.8);
-      const doorMat = new THREE.MeshStandardMaterial({ color: 0xdcd7cb });
+      const doorMat = new THREE.MeshStandardMaterial({ color: 0x888888 });
       const door = new THREE.Mesh(doorGeo, doorMat);
       door.position.set(-4.95, 0.6, 0);
       scenarioGroup.add(door);
@@ -947,9 +928,9 @@
       // Secure/restricted zone visualizer boundary on floor
       const restrictGeo = new THREE.BoxGeometry(4, 0.01, 8);
       const restrictMat = new THREE.MeshBasicMaterial({
-        color: simulationActive ? 0xc8503a : 0x2563eb,
+        color: simulationActive ? 0xc8503a : 0x2e2d29,
         transparent: true,
-        opacity: 0.08
+        opacity: 0.05
       });
       const zoneFloor = new THREE.Mesh(restrictGeo, restrictMat);
       zoneFloor.position.set(2, 0.015, 0);
@@ -962,7 +943,7 @@
       ];
       const zoneLineGeo = new THREE.BufferGeometry().setFromPoints(zoneLinePoints);
       const zoneLineMat = new THREE.LineBasicMaterial({
-        color: simulationActive ? 0xc8503a : 0x2563eb,
+        color: simulationActive ? 0xc8503a : 0x2e2d29,
         linewidth: 2
       });
       const zoneLine = new THREE.Line(zoneLineGeo, zoneLineMat);
@@ -974,14 +955,14 @@
       
       const personConfig = [
         {
-          color: 0x111111,
+          color: 0x2e2d29,
           center: new THREE.Vector3(-2, 0, 0),
           range: 1.8,
           speed: 0.015,
           time: 0
         },
         {
-          color: 0x111111,
+          color: 0x2e2d29,
           center: new THREE.Vector3(1.5, 0, 1),
           range: 2.2,
           speed: 0.009,
@@ -1028,13 +1009,13 @@
 
       // Clinical Bed frame
       const frameGeo = new THREE.BoxGeometry(1.6, 0.3, 0.85);
-      const frameMat = new THREE.MeshStandardMaterial({ color: 0xeae6dc });
+      const frameMat = new THREE.MeshStandardMaterial({ color: 0xcccccc });
       clinicalBed = new THREE.Mesh(frameGeo, frameMat);
       clinicalBed.position.set(0, 0.3, 0);
       scenarioGroup.add(clinicalBed);
 
       const railLGeo = new THREE.BoxGeometry(1.2, 0.15, 0.02);
-      const railMat = new THREE.MeshStandardMaterial({ color: 0xd3cbbe });
+      const railMat = new THREE.MeshStandardMaterial({ color: 0x888888 });
       const railL = new THREE.Mesh(railLGeo, railMat);
       railL.position.set(0, 0.5, 0.44);
       scenarioGroup.add(railL);
@@ -1048,13 +1029,13 @@
       ivStand.position.set(-0.9, 0, -0.6);
       
       const poleGeo = new THREE.CylinderGeometry(0.015, 0.015, 1.8);
-      const poleMat = new THREE.MeshStandardMaterial({ color: 0x111111 });
+      const poleMat = new THREE.MeshStandardMaterial({ color: 0x888888 });
       const pole = new THREE.Mesh(poleGeo, poleMat);
       pole.position.y = 0.9;
       ivStand.add(pole);
 
       const boxGeo = new THREE.BoxGeometry(0.15, 0.25, 0.15);
-      const boxMat = new THREE.MeshStandardMaterial({ color: 0xeae6dc });
+      const boxMat = new THREE.MeshStandardMaterial({ color: 0xcccccc });
       const box = new THREE.Mesh(boxGeo, boxMat);
       box.position.set(0, 1.3, 0);
       ivStand.add(box);
@@ -1067,7 +1048,7 @@
 
       const bodyGeo = new THREE.CylinderGeometry(0.14, 0.14, 0.9, 16);
       bodyGeo.rotateZ(Math.PI / 2);
-      const bodyMat = new THREE.MeshStandardMaterial({ color: 0x48504f });
+      const bodyMat = new THREE.MeshStandardMaterial({ color: 0x888888 });
       const body = new THREE.Mesh(bodyGeo, bodyMat);
       patientGroup.add(body);
 
@@ -1081,7 +1062,7 @@
       // Heart Rate Pulsing Sphere
       const pulseGeo = new THREE.SphereGeometry(0.06, 16, 16);
       const pulseMat = new THREE.MeshBasicMaterial({
-        color: 0x0d9488,
+        color: 0x2e2d29,
         transparent: true,
         opacity: 0.8
       });
@@ -1125,7 +1106,7 @@
       ctx.fillRect(254, 0, 2, 128);
 
       // Draw Grid line on trailing edge
-      ctx.strokeStyle = '#f2edd0';
+      ctx.strokeStyle = '#eaeaea';
       ctx.lineWidth = 1;
       for (let y = 0; y < 128; y += 16) {
         ctx.beginPath();
@@ -1135,7 +1116,7 @@
       }
 
       // Draw ECG dot
-      ctx.strokeStyle = simulationActive ? '#c8503a' : '#0d9488';
+      ctx.strokeStyle = simulationActive ? '#c8503a' : '#2e2d29';
       ctx.lineWidth = 2;
       ctx.beginPath();
 
@@ -1202,8 +1183,6 @@
 
       // Point lights pulsing
       pointLights.forEach((light) => {
-        const currentTheme = themes[activeScenario];
-        light.color.setHex(simulationActive ? 0xc8503a : currentTheme.signal);
         light.intensity = 0.2 + Math.abs(Math.sin(time * 1.5)) * 0.3;
       });
 
@@ -1211,33 +1190,29 @@
       meshColorTimer += 0.015;
       meshLines.forEach((lineObj, idx) => {
         const select = Math.floor(meshColorTimer) % 6;
-        const currentTheme = themes[activeScenario];
-        const baseColor = currentTheme.signal;
         if (idx === select) {
-          lineObj.mat.color.setHex(simulationActive ? 0xc8503a : baseColor);
-          lineObj.mat.opacity = 0.6;
+          lineObj.mat.color.setHex(simulationActive ? 0xc8503a : 0x2e2d29);
+          lineObj.mat.opacity = 0.4;
         } else {
-          lineObj.mat.color.setHex(baseColor);
-          lineObj.mat.opacity = 0.12;
+          lineObj.mat.color.setHex(0x2e2d29);
+          lineObj.mat.opacity = 0.05;
         }
       });
 
       // Flashing nodes logic
-      const currentTheme = themes[activeScenario];
-      const baseColor = currentTheme.signal;
       if (simulationActive) {
         const flash = Math.floor(time * 3) % 2 === 0;
-        const flashColor = flash ? baseColor : 0xc8503a;
+        const flashColor = flash ? 0x2e2d29 : 0xc8503a;
         nodesGroup.children.forEach(n => {
-          n.children[0].material.color.setHex(0x111111);
+          n.children[0].material.color.setHex(flashColor);
           if (n.children[2]) n.children[2].color.setHex(flashColor);
           n.children[3].material.color.setHex(flashColor); // torus
         });
       } else {
         nodesGroup.children.forEach(n => {
-          n.children[0].material.color.setHex(0x111111);
-          if (n.children[2]) n.children[2].color.setHex(baseColor);
-          n.children[3].material.color.setHex(baseColor); // torus
+          n.children[0].material.color.setHex(0x2e2d29);
+          if (n.children[2]) n.children[2].color.setHex(0xcccccc);
+          n.children[3].material.color.setHex(0x2e2d29); // torus
         });
       }
 
@@ -1292,8 +1267,8 @@
             p.head.material.color.setHex(0xc8503a);
             p.body.material.color.setHex(0xc8503a);
           } else {
-            p.head.material.color.setHex(0x111111);
-            p.body.material.color.setHex(0x111111);
+            p.head.material.color.setHex(0x2e2d29);
+            p.body.material.color.setHex(0x2e2d29);
           }
         });
 
@@ -1315,7 +1290,7 @@
         const hrScale = 0.5 + Math.abs(Math.sin(time * (Math.PI * 2 / hrPeriod))) * 0.8;
         if (heartPulseMesh) {
           heartPulseMesh.scale.set(hrScale, hrScale, hrScale);
-          heartPulseMesh.material.color.setHex(isApnea ? 0xc8503a : 0x0d9488);
+          heartPulseMesh.material.color.setHex(isApnea ? 0xc8503a : 0x2e2d29);
         }
 
         // Render Waveform Canvas
@@ -1428,10 +1403,10 @@
           simBtn.style.color = '#c8503a';
         }
       } else {
-        if (cardLeft) cardLeft.style.borderColor = 'rgba(17, 17, 17, 0.15)';
-        if (cardRight) cardRight.style.borderColor = 'rgba(17, 17, 17, 0.15)';
+        if (cardLeft) cardLeft.style.borderColor = 'rgba(46, 45, 41, 0.12)';
+        if (cardRight) cardRight.style.borderColor = 'rgba(46, 45, 41, 0.12)';
         if (simBtn) {
-          simBtn.style.borderColor = 'var(--accent)';
+          simBtn.style.borderColor = 'rgba(46, 45, 41, 0.3)';
           simBtn.style.color = 'var(--accent)';
         }
       }
@@ -1443,14 +1418,12 @@
           simBtn.textContent = "Clear Alert";
           document.getElementById('status-box').textContent = "ALERT";
           document.getElementById('status-box').style.color = "#c8503a";
-          document.getElementById('status-box').style.background = "#fdf2f0";
         } else {
           banner.className = "alert-banner normal";
           banner.textContent = "All Vitals Normal";
           simBtn.textContent = "Simulate Alert";
           document.getElementById('status-box').textContent = "RESTING";
-          document.getElementById('status-box').style.color = "#854d0e";
-          document.getElementById('status-box').style.background = "#fef3c7";
+          document.getElementById('status-box').style.color = "var(--accent)";
         }
       } else if (activeScenario === 'security') {
         const floorTint = zonesGroup.getObjectByName("floor_tint");
@@ -1464,7 +1437,6 @@
           simBtn.textContent = "Business Hours Mode";
           document.getElementById('status-box').textContent = "AFTER HOURS ALERT";
           document.getElementById('status-box').style.color = "#c8503a";
-          document.getElementById('status-box').style.background = "#fdf2f0";
 
           if (floorTint) floorTint.material.color.setHex(0xc8503a);
           if (boundaryLine) boundaryLine.material.color.setHex(0xc8503a);
@@ -1481,11 +1453,10 @@
           banner.textContent = "Security System Armed";
           simBtn.textContent = "After Hours Mode";
           document.getElementById('status-box').textContent = "OCCUPIED";
-          document.getElementById('status-box').style.color = "#1e40af";
-          document.getElementById('status-box').style.background = "#dbeafe";
+          document.getElementById('status-box').style.color = "var(--accent)";
 
-          if (floorTint) floorTint.material.color.setHex(0x2563eb);
-          if (boundaryLine) boundaryLine.material.color.setHex(0x2563eb);
+          if (floorTint) floorTint.material.color.setHex(0x2e2d29);
+          if (boundaryLine) boundaryLine.material.color.setHex(0x2e2d29);
         }
       } else if (activeScenario === 'clinical') {
         const respFill = document.getElementById('range-resp-fill');
@@ -1498,11 +1469,11 @@
 
           if (respFill) {
             respFill.style.width = '0%';
-            respFill.style.background = '#c8503a';
+            respFill.style.background = 'rgba(200, 80, 58, 0.4)';
           }
           if (hrFill) {
             hrFill.style.width = '42%';
-            hrFill.style.background = '#c8503a';
+            hrFill.style.background = 'rgba(200, 80, 58, 0.4)';
           }
 
           // Start timer for Apnea beep sequence
@@ -1511,7 +1482,6 @@
               banner.textContent = "⚠ Critical Alert: APNEA DETECTED — 10s";
               document.getElementById('status-box').textContent = "CRITICAL";
               document.getElementById('status-box').style.color = "#c8503a";
-              document.getElementById('status-box').style.background = "#fdf2f0";
 
               // Beep sound loops
               const interval = setInterval(() => {
@@ -1529,16 +1499,15 @@
           banner.textContent = "All Vitals Normal";
           simBtn.textContent = "Simulate Apnea";
           document.getElementById('status-box').textContent = "STABLE";
-          document.getElementById('status-box').style.color = "#0f766e";
-          document.getElementById('status-box').style.background = "#e6f4f2";
+          document.getElementById('status-box').style.color = "var(--accent)";
 
           if (respFill) {
             respFill.style.width = '70%';
-            respFill.style.background = '#0d9488';
+            respFill.style.background = 'rgba(46, 45, 41, 0.25)';
           }
           if (hrFill) {
             hrFill.style.width = '72%';
-            hrFill.style.background = '#0d9488';
+            hrFill.style.background = 'rgba(46, 45, 41, 0.25)';
           }
         }
       }
@@ -1561,7 +1530,7 @@
             <div class="metric-item">
               <div class="metric-row">
                 <span class="metric-label">Status</span>
-                <span class="metric-value highlight" id="status-box" style="color: #854d0e; background: #fef3c7;">RESTING</span>
+                <span class="metric-value highlight" id="status-box">RESTING</span>
               </div>
             </div>
             <div class="metric-item">
@@ -1597,19 +1566,19 @@
             <div class="metric-item">
               <div class="metric-row">
                 <span class="metric-label">Fall Detection</span>
-                <span class="metric-value" style="color: var(--accent)">✓ ACTIVE</span>
+                <span class="metric-value" style="color: rgba(46, 45, 41, 0.8)">✓ ACTIVE</span>
               </div>
             </div>
             <div class="metric-item">
               <div class="metric-row">
                 <span class="metric-label">Breathing Monitor</span>
-                <span class="metric-value" style="color: var(--accent)">✓ ACTIVE</span>
+                <span class="metric-value" style="color: rgba(46, 45, 41, 0.8)">✓ ACTIVE</span>
               </div>
             </div>
             <div class="metric-item">
               <div class="metric-row">
                 <span class="metric-label">Night Wandering</span>
-                <span class="metric-value" style="color: var(--accent)">✓ ACTIVE</span>
+                <span class="metric-value" style="color: rgba(46, 45, 41, 0.8)">✓ ACTIVE</span>
               </div>
             </div>
             <div class="metric-item">
@@ -1640,7 +1609,7 @@
             <div class="metric-item">
               <div class="metric-row">
                 <span class="metric-label">Security Mode</span>
-                <span class="metric-value highlight" id="status-box" style="color: #1e40af; background: #dbeafe;">OCCUPIED</span>
+                <span class="metric-value highlight" id="status-box">OCCUPIED</span>
               </div>
             </div>
             <div class="metric-item">
@@ -1707,7 +1676,7 @@
             <div class="metric-item">
               <div class="metric-row">
                 <span class="metric-label">Clinical Status</span>
-                <span class="metric-value highlight" id="status-box" style="color: #0f766e; background: #e6f4f2;">STABLE</span>
+                <span class="metric-value highlight" id="status-box">STABLE</span>
               </div>
             </div>
             <div class="metric-item" style="gap:0.2rem">
@@ -1715,19 +1684,19 @@
                 <span class="metric-label">Respiration</span>
                 <span class="metric-value highlight" id="val-resp"><span class="num">14</span> BPM</span>
               </div>
-              <div class="range-bar"><div id="range-resp-fill" class="range-fill" style="width:70%; background: #0d9488;"></div></div>
+              <div class="range-bar"><div id="range-resp-fill" class="range-fill" style="width:70%; background: rgba(46, 45, 41, 0.25)"></div></div>
             </div>
             <div class="metric-item" style="gap:0.2rem">
               <div class="metric-row">
                 <span class="metric-label">Heart Rate</span>
                 <span class="metric-value" id="val-hr-clin"><span class="num">72</span> BPM</span>
               </div>
-              <div class="range-bar"><div id="range-hr-fill" class="range-fill" style="width:72%; background: #0d9488;"></div></div>
+              <div class="range-bar"><div id="range-hr-fill" class="range-fill" style="width:72%; background: rgba(46, 45, 41, 0.25)"></div></div>
             </div>
             <div class="metric-item">
               <div class="metric-row">
                 <span class="metric-label">SpO2 (Est.)</span>
-                <span class="metric-value" style="color: rgba(17, 17, 17, 0.35)">FUTURE USE</span>
+                <span class="metric-value" style="color:rgba(46,45,41,0.35)">FUTURE USE</span>
               </div>
             </div>
           </div>
@@ -1739,19 +1708,19 @@
             <div class="metric-item">
               <div class="metric-row">
                 <span class="metric-label">Apnea Detection</span>
-                <span class="metric-value" style="color: var(--accent)">✓ ENABLED</span>
+                <span class="metric-value" style="color: rgba(46, 45, 41, 0.8)">✓ ENABLED</span>
               </div>
             </div>
             <div class="metric-item">
               <div class="metric-row">
                 <span class="metric-label">Tachycardia Alert</span>
-                <span class="metric-value" style="color: var(--accent)">✓ ENABLED</span>
+                <span class="metric-value" style="color: rgba(46, 45, 41, 0.8)">✓ ENABLED</span>
               </div>
             </div>
             <div class="metric-item">
               <div class="metric-row">
                 <span class="metric-label">Bradycardia Alert</span>
-                <span class="metric-value" style="color: var(--accent)">✓ ENABLED</span>
+                <span class="metric-value" style="color: rgba(46, 45, 41, 0.8)">✓ ENABLED</span>
               </div>
             </div>
             <div class="metric-item">
